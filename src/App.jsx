@@ -1,33 +1,19 @@
-import React, { useReducer } from 'react';
-
-function reducer(state, action) {
-
-    if (action === "INCREMENT") {
-        return state + 1;
-    }
-
-    if (action === "DECREMENT") {
-        return state - 1;
-    }
-
-    return state;
-}
+import Counter from './components/Counter';
+import Users from './components/Users';
 
 function App() {
 
-    const [state, dispatch] = useReducer(reducer, 0);
-
     return (
         <div>
-            <h1>Count: {state}</h1>
 
-            <button onClick={() => dispatch("INCREMENT")}>
-                Increment
-            </button>
+            <h1>React Application</h1>
 
-            <button onClick={() => dispatch("DECREMENT")}>
-                Decrement
-            </button>
+            <Counter />
+
+            <hr />
+
+            <Users />
+
         </div>
     );
 }
